@@ -21,17 +21,14 @@ public class LinksSuggester {
     public LinksSuggester(File file) throws WrongLinksFormatException, IOException {
         this.file = file;
         suggests = new ArrayList<>();
-        try {
+        if(!checkOfValidity()){
             List<String> lines = Files.readAllLines(Paths.get(file.getPath()));
             for (String s : lines) {
                 String[] line = s.split("\t");
                 Suggest suggest = new Suggest(line[0], line[1], line[2]);
                 suggests.add(suggest);
             }
-        } catch (WrongLinksFormatException msg){
-            checkOfValidity();
         }
-
     }
 
     //Метод перебора текста и добавления ссылок
