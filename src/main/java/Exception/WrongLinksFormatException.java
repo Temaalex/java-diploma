@@ -1,4 +1,4 @@
-package SuggestsFile.Exception;
+package Exception;
 
 public class WrongLinksFormatException extends RuntimeException {
 
