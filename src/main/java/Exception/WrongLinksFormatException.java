@@ -1,3 +1,5 @@
+package SuggestsFile.Exception;
+
 public class WrongLinksFormatException extends RuntimeException {
 
     public WrongLinksFormatException(String msg) {
